@@ -1,0 +1,59 @@
+<!doctype html>
+<title>Garage Status</title>
+<head>
+<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" media="screen">
+</head>
+<body>
+<h1>Garage Status1</h1>
+{% if ts and status %}
+<table>
+<tr>
+<td><img src="{{url_for('static', filename='%s/%s_day.jpg'%(status, ts))}}"></td>
+<td><img src="{{url_for('static', filename='%s/%s_night.jpg'%(status, ts))}}"></td>
+</tr>
+</table>
+{% endif %}
+<h2>Click for DAY</h2>
+<table class="table table-striped table-bordered table-condensed">
+<tr>
+<td> 
+    <form method="post">
+        <input type="hidden" name="mode" value="day">
+        <input type="hidden" name="doorStatus" value="open">
+        <input class="btn btn-primary" type="submit" value="DAY OPEN">
+    </form>
+</td>
+</tr>
+<tr>
+<td> 
+    <form method="post">
+        <input type="hidden" name="mode" value="day">
+        <input type="hidden" name="doorStatus" value="closed">
+        <input class="btn btn-secondary" type="submit" value="DAY CLOSED">
+    </form>
+</td>
+</tr>
+</table>
+
+<h2>Click for NIGHT</h2>
+<table class="table table-striped table-bordered table-condensed">
+<tr>
+<td> 
+    <form method="post">
+        <input type="hidden" name="mode" value="night">
+        <input type="hidden" name="doorStatus" value="open">
+        <input class="btn btn-primary" type="submit" value="OPEN">
+    </form>
+</td>
+</tr>
+<tr>
+<td>
+    <form method="post">
+        <input type="hidden" name="mode" value="night">
+        <input type="hidden" name="doorStatus" value="closed">
+        <input class="btn btn-secondary" type="submit" value="CLOSED">
+    </form>
+</td>
+</tr>
+</table>
+</body>

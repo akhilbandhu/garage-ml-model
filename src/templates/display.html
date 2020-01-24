@@ -1,0 +1,16 @@
+<!doctype html>
+<title>Garage Status</title>
+<head>
+<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" media="screen">
+</head>
+<body>
+<h1>Garage Status1</h1>
+{% if data %}
+<table>
+<tr>
+<td><img src="data:image/png;base64,{{data}}" /></td>
+</tr>
+</table>
+{% endif %}
+<h2>No Data :(</h2>
+</body>
